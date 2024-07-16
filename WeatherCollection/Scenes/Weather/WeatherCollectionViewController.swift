@@ -72,7 +72,7 @@ final class WeatherCollectionViewController: UIViewController, WeatherCollection
     }
 
     func selectWeatherEvent(at weatherEvent: WeatherEvent) {
-        weatherUIView.backgroundColor = weatherEvent.backgroundColor
+        weatherUIView.backgroundColor = weatherEvent.backgroundColor.withAlphaComponent(0.8)
         weatherUIImageView.image = weatherEvent.image
         weatherCollectionView?.reloadData()
     }
