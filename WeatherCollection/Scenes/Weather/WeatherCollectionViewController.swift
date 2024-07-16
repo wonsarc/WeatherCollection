@@ -54,7 +54,12 @@ final class WeatherCollectionViewController: UIViewController, WeatherCollection
         setupWeatherUIView()
         setupWeatherUIImageView()
         setupWeatherCollectionView()
+    }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        applyInitialSnapshot()
         selectFirstEvent()
     }
 
@@ -62,6 +67,7 @@ final class WeatherCollectionViewController: UIViewController, WeatherCollection
 
     func didSelectWeatherEvent() {
         guard let selectedIndexPath = selectedIndexPath else { return }
+        weatherCollectionView?.selectItem(at: selectedIndexPath, animated: true, scrollPosition: .centeredHorizontally)
         presenter?.didSelectWeatherEvent(selectedIndexPath)
     }
 
@@ -110,7 +116,6 @@ final class WeatherCollectionViewController: UIViewController, WeatherCollection
 
         weatherCollectionView.translatesAutoresizingMaskIntoConstraints = false
         weatherCollectionView.register(WeatherViewCell.self, forCellWithReuseIdentifier: WeatherViewCell.reuseIdent)
-//        weatherCollectionView.allowsMultipleSelection = false
         weatherCollectionView.backgroundColor = .white
         weatherCollectionView.delegate = self
 
@@ -120,8 +125,6 @@ final class WeatherCollectionViewController: UIViewController, WeatherCollection
         weatherCollectionView.bottomAnchor.constraint(equalTo: weatherUIImageView.topAnchor, constant: -40).isActive = true
         weatherCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         weatherCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-
-        applyInitialSnapshot()
     }
 }
 
@@ -170,6 +173,16 @@ extension WeatherCollectionViewController {
                 fatalError("Cannot create new cell")
             }
 
+            let isSelected = self.selectedIndexPath == indexPath
+
+            if (self.selectedIndexPath == indexPath) {
+                cell.isSelected = isSelected
+                cell.backgroundColor = .brown
+            } else {
+                cell.isSelected = !isSelected
+                cell.backgroundColor = .clear
+            }
+
             cell.configCell(with: item.title)
 
             return cell
@@ -189,21 +202,10 @@ extension WeatherCollectionViewController {
 // MARK: - UICollectionViewDelegate
 
 extension WeatherCollectionViewController: UICollectionViewDelegate {
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        guard (dataSource?.itemIdentifier(for: indexPath)) != nil else { return }
 
-        if let selectedIndexPath = selectedIndexPath {
-            weatherCollectionView?.cellForItem(at: selectedIndexPath)?.isSelected = false
-            weatherCollectionView?.cellForItem(at: selectedIndexPath)?.backgroundColor = .clear
-        }
-
-        let selectedCell = weatherCollectionView?.cellForItem(at: indexPath)
-        selectedCell?.isSelected = true
-        selectedCell?.backgroundColor = .black
         selectedIndexPath = indexPath
-
         didSelectWeatherEvent()
     }
 }
