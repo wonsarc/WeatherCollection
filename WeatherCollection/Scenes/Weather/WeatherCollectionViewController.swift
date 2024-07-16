@@ -73,9 +73,11 @@ final class WeatherCollectionViewController: UIViewController, WeatherCollection
 
     func selectWeatherEvent(at weatherEvent: WeatherEvent) {
         weatherUIView.backgroundColor = weatherEvent.backgroundColor.withAlphaComponent(0.8)
-        weatherUIImageView.image = weatherEvent.image
+//        weatherUIImageView.image = weatherEvent.image
+        animateImageViewChange(to: weatherEvent.image)
         weatherCollectionView?.reloadData()
     }
+    
 
     // MARK: - Private Methods
 
@@ -116,12 +118,12 @@ final class WeatherCollectionViewController: UIViewController, WeatherCollection
 
         weatherCollectionView.translatesAutoresizingMaskIntoConstraints = false
         weatherCollectionView.register(WeatherViewCell.self, forCellWithReuseIdentifier: WeatherViewCell.reuseIdent)
-        weatherCollectionView.backgroundColor = .white
+        weatherCollectionView.backgroundColor = .clear
         weatherCollectionView.delegate = self
 
         weatherUIView.addSubview(weatherCollectionView)
 
-        weatherCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        weatherCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
         weatherCollectionView.bottomAnchor.constraint(equalTo: weatherUIImageView.topAnchor, constant: -40).isActive = true
         weatherCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         weatherCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -142,18 +144,20 @@ extension WeatherCollectionViewController {
         )
 
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(0.5)
+            widthDimension: .fractionalWidth(0.3),
+            heightDimension: .fractionalHeight(0.6)
         )
 
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
             subitem: item,
-            count: 3
+            count: 1
         )
 
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
+        section.interGroupSpacing = 10
+        section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10)
 
         let layout = UICollectionViewCompositionalLayout(section: section)
 
@@ -175,15 +179,7 @@ extension WeatherCollectionViewController {
 
             let isSelected = self.selectedIndexPath == indexPath
 
-            if (self.selectedIndexPath == indexPath) {
-                cell.isSelected = isSelected
-                cell.backgroundColor = .brown
-            } else {
-                cell.isSelected = !isSelected
-                cell.backgroundColor = .clear
-            }
-
-            cell.configCell(with: item.title)
+            cell.configCell(with: item, isSelected: isSelected)
 
             return cell
         }
@@ -197,6 +193,34 @@ extension WeatherCollectionViewController {
         snapshot.appendItems(presenter?.events ?? [], toSection: .main)
         dataSource.apply(snapshot, animatingDifferences: true)
     }
+
+    private func animateCellToFullscreen(cell: UICollectionViewCell, completion: @escaping () -> Void) {
+        guard let window = UIApplication.shared.windows.first else { return }
+
+        let animationView = UIView(frame: cell.frame)
+        animationView.backgroundColor = cell.backgroundColor
+        animationView.layer.cornerRadius = cell.layer.cornerRadius
+        animationView.layer.masksToBounds = true
+
+        window.addSubview(animationView)
+
+        let startFrame = cell.superview?.convert(cell.frame, to: nil) ?? .zero
+        animationView.frame = startFrame
+
+        UIView.animate(withDuration: 0.5, animations: {
+            animationView.frame = window.frame
+            animationView.layer.cornerRadius = 0
+        }) { _ in
+            animationView.removeFromSuperview()
+            completion()
+        }
+    }
+
+    private func animateImageViewChange(to newImage: UIImage?) {
+        UIView.transition(with: weatherUIImageView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.weatherUIImageView.image = newImage
+        }, completion: nil)
+    }
 }
 
 // MARK: - UICollectionViewDelegate
@@ -205,7 +229,11 @@ extension WeatherCollectionViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
+        guard let cell = collectionView.cellForItem(at: indexPath) else { return }
         selectedIndexPath = indexPath
-        didSelectWeatherEvent()
+        animateCellToFullscreen(cell: cell) {
+            self.didSelectWeatherEvent()
+        }
+//        didSelectWeatherEvent()
     }
 }
