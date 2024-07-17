@@ -26,17 +26,13 @@ final class WeatherCollectionPresenter: WeatherCollectionPresenterProtocol {
     }()
 
     // MARK: - Private Properties
-    
+
     private let weatherEventService = WeatherEventService()
-
-    // MARK: - Overrides Methods
-
+    
     // MARK: - Public Methods
 
     func didSelectWeatherEvent(_ indexPath: IndexPath) {
 
         view?.selectWeatherEvent(at: events[indexPath.row])
     }
-    
-    // MARK: - Private Methods
 }

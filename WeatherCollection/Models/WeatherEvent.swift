@@ -7,10 +7,14 @@
 
 import UIKit
 
-struct WeatherEvent: Hashable {
+enum WeatherType {
+    case fog
+    case clouds
+}
 
+struct WeatherEvent: Hashable {
     let id = UUID()
+    let type: WeatherType
     let title: String
-    let image: UIImage
     let backgroundColor: UIColor
 }

@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  WeatherCollection
+
+  Created by Artem Krasnov on 17.07.2024.
+  
+*/
+
+"events.weather.cloud" = "Облачно";
+"events.weather.fog" = "Туман";

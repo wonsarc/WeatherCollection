@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  WeatherCollection
+
+  Created by Artem Krasnov on 17.07.2024.
+  
+*/
+
+"CFBundleDisplayName" = "Погодка";
