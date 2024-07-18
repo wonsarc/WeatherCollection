@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CloudAnimation: WeatherAnimation {
+final class CloudAnimation: WeatherAnimationProtocol {
 
     // MARK: - Public Properties
 
@@ -21,6 +21,8 @@ final class CloudAnimation: WeatherAnimation {
 
     func apply(to view: WeatherView) {
         view.clearWeatherLayers()
+
+        WeatherAnimation().setupBackgroundColor(to: view, weather: .cloudy)
 
         let numberOfLayers = 10
         for _ in 0..<numberOfLayers {

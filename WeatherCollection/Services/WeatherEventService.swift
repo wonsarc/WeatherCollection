@@ -21,9 +21,8 @@ final class WeatherEventService: WeatherEventServiceProtocol {
         return events
     }()
 
-
     // MARK: - Public Methods
-    
+
     func fetchWeatherEvents() -> [WeatherEvent] {
         events
     }
@@ -34,65 +33,64 @@ final class WeatherEventService: WeatherEventServiceProtocol {
 
         events.append(
             WeatherEvent(
-                type: .clouds,
-                title: NSLocalizedString("events.weather.cloud", comment: ""),
-                backgroundColor: UIColor(resource: .clearDay)
+                type: .sunny,
+                title: NSLocalizedString("events.weather.sun", comment: "")
             )
         )
 
         events.append(
             WeatherEvent(
-                type: .fog,
-                title: NSLocalizedString("events.weather.fog", comment: ""),
-                backgroundColor: UIColor(resource: .foggy)
+                type: .cloudy,
+                title: NSLocalizedString("events.weather.cloud", comment: "")
             )
         )
 
         events.append(
             WeatherEvent(
-                type: .clouds,
-                title: NSLocalizedString("events.weather.cloud", comment: ""),
-                backgroundColor: UIColor(resource: .clearDay)
+                type: .foggy,
+                title: NSLocalizedString("events.weather.fog", comment: "")
             )
         )
 
         events.append(
             WeatherEvent(
-                type: .fog,
-                title: NSLocalizedString("events.weather.fog", comment: ""),
-                backgroundColor: UIColor(resource: .foggy)
+                type: .rain,
+                title: NSLocalizedString("events.weather.rain", comment: "")
             )
         )
 
         events.append(
             WeatherEvent(
-                type: .clouds,
-                title: NSLocalizedString("events.weather.cloud", comment: ""),
-                backgroundColor: UIColor(resource: .clearDay)
+                type: .snow,
+                title: NSLocalizedString("events.weather.snow", comment: "")
             )
         )
 
         events.append(
             WeatherEvent(
-                type: .fog,
-                title: NSLocalizedString("events.weather.fog", comment: ""),
-                backgroundColor: UIColor(resource: .foggy)
+                type: .sunny,
+                title: NSLocalizedString("events.weather.sun", comment: "")
             )
         )
 
         events.append(
             WeatherEvent(
-                type: .clouds,
-                title: NSLocalizedString("events.weather.cloud", comment: ""),
-                backgroundColor: UIColor(resource: .clearDay)
+                type: .cloudy,
+                title: NSLocalizedString("events.weather.cloud", comment: "")
             )
         )
 
         events.append(
             WeatherEvent(
-                type: .fog,
-                title: NSLocalizedString("events.weather.fog", comment: ""),
-                backgroundColor: UIColor(resource: .foggy)
+                type: .foggy,
+                title: NSLocalizedString("events.weather.fog", comment: "")
+            )
+        )
+
+        events.append(
+            WeatherEvent(
+                type: .rain,
+                title: NSLocalizedString("events.weather.rain", comment: "")
             )
         )
     }

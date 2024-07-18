@@ -8,3 +8,6 @@
 
 "events.weather.cloud" = "Cloudy";
 "events.weather.fog" = "Foggy";
+"events.weather.sun" = "Sunny";
+"events.weather.rain" = "Rain";
+"events.weather.snow" = "Snow";

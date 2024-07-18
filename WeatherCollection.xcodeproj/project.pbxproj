@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		414B95B82C4850E200763E61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 414B95B72C4850E200763E61 /* LaunchScreen.storyboard */; };
 		414B95BD2C48521E00763E61 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 414B95BB2C48521E00763E61 /* Localizable.strings */; };
+		414B95C02C494F3B00763E61 /* SunAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B95BF2C494F3B00763E61 /* SunAnimation.swift */; };
+		414B95C22C4957AC00763E61 /* RainAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B95C12C4957AC00763E61 /* RainAnimation.swift */; };
+		414B95C42C49701C00763E61 /* SnowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B95C32C49701C00763E61 /* SnowAnimation.swift */; };
 		41ACAF5C2C467AF70002E119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACAF5B2C467AF70002E119 /* AppDelegate.swift */; };
 		41ACAF652C467AF80002E119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41ACAF642C467AF80002E119 /* Assets.xcassets */; };
 		41ACAF732C467AF80002E119 /* WeatherCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACAF722C467AF80002E119 /* WeatherCollectionTests.swift */; };
@@ -48,6 +51,9 @@
 		414B95B62C4850E200763E61 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		414B95BC2C48521E00763E61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		414B95BE2C48523400763E61 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		414B95BF2C494F3B00763E61 /* SunAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunAnimation.swift; sourceTree = "<group>"; };
+		414B95C12C4957AC00763E61 /* RainAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainAnimation.swift; sourceTree = "<group>"; };
+		414B95C32C49701C00763E61 /* SnowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowAnimation.swift; sourceTree = "<group>"; };
 		41ACAF582C467AF70002E119 /* WeatherCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41ACAF5B2C467AF70002E119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41ACAF642C467AF80002E119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -199,6 +205,9 @@
 				41ACAFB22C47F8A30002E119 /* WeatherAnimation.swift */,
 				41ACAFB42C47F8BF0002E119 /* FogAnimation.swift */,
 				41ACAFB92C47F9540002E119 /* CloudAnimation.swift */,
+				414B95BF2C494F3B00763E61 /* SunAnimation.swift */,
+				414B95C12C4957AC00763E61 /* RainAnimation.swift */,
+				414B95C32C49701C00763E61 /* SnowAnimation.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -356,6 +365,9 @@
 				41ACAFB52C47F8BF0002E119 /* FogAnimation.swift in Sources */,
 				41ACAFA32C46AF820002E119 /* WeatherCollectionPresenter.swift in Sources */,
 				41ACAF9F2C46A1400002E119 /* WeatherEventService.swift in Sources */,
+				414B95C22C4957AC00763E61 /* RainAnimation.swift in Sources */,
+				414B95C02C494F3B00763E61 /* SunAnimation.swift in Sources */,
+				414B95C42C49701C00763E61 /* SnowAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

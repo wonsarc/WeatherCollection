@@ -8,13 +8,15 @@
 import UIKit
 
 enum WeatherType {
-    case fog
-    case clouds
+    case foggy
+    case cloudy
+    case sunny
+    case rain
+    case snow
 }
 
 struct WeatherEvent: Hashable {
     let id = UUID()
     let type: WeatherType
     let title: String
-    let backgroundColor: UIColor
 }

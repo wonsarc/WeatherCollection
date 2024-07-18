@@ -13,10 +13,6 @@ final class WeatherView: UIView {
 
     var weatherLayers: [CALayer] = []
 
-    // MARK: - Private Properties
-
-    private var blurEffectView: UIVisualEffectView?
-
     // MARK: - Initializers
 
     override init(frame: CGRect) {
@@ -34,21 +30,5 @@ final class WeatherView: UIView {
             layer.removeFromSuperlayer()
         }
         weatherLayers.removeAll()
-        removeBlurEffect()
-    }
-
-    func setupBlurEffect() {
-        let blurEffect = UIBlurEffect(style: .light)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        addSubview(blurEffectView)
-        sendSubviewToBack(blurEffectView)
-        self.blurEffectView = blurEffectView
-    }
-
-    func removeBlurEffect() {
-        blurEffectView?.removeFromSuperview()
-        blurEffectView = nil
     }
 }

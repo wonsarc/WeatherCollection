@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class FogAnimation: WeatherAnimation {
+final class FogAnimation: WeatherAnimationProtocol {
 
     // MARK: - Public Properties
 
@@ -22,14 +22,15 @@ final class FogAnimation: WeatherAnimation {
     func apply(to view: WeatherView) {
         view.clearWeatherLayers()
 
-        let numberOfLayers = 30
+        WeatherAnimation().setupBackgroundColor(to: view, weather: .foggy)
+
+        let numberOfLayers = 20
         for _ in 0..<numberOfLayers {
             let fogLayer = createFogLayer(bounds: view.bounds)
             view.layer.addSublayer(fogLayer)
             view.weatherLayers.append(fogLayer)
         }
 
-        view.setupBlurEffect()
         view.weatherLayers.forEach { layer in
             layer.add(createFogLayerAnimation(for: layer), forKey: "fogAnimation")
         }
@@ -60,7 +61,7 @@ final class FogAnimation: WeatherAnimation {
             )
         )
 
-        animation.duration = Double.random(in: 5.0...10.0)
+        animation.duration = Double.random(in: 1.0...5.0)
         animation.repeatCount = .infinity
         animation.autoreverses = true
         return animation

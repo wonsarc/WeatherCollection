@@ -8,3 +8,6 @@
 
 "events.weather.cloud" = "Облачно";
 "events.weather.fog" = "Туман";
+"events.weather.sun" = "Солнечно";
+"events.weather.rain" = "Дождь";
+"events.weather.snow" = "Снег";
