@@ -8,20 +8,21 @@
 import UIKit
 
 protocol WeatherAnimationProtocol {
-
+    
     var layers: [CALayer] { get }
-
+    
     func apply(to view: WeatherView)
 }
 
 final class WeatherAnimation {
-
+    
     func setupBackgroundColor(to view: WeatherView, weather: WeatherType) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
-
+        
         switch weather {
-        case .sunny:
+            
+        case .sunny, .rainbow:
             gradientLayer.colors = [
                 UIColor(hex: 0xAFF3E9).cgColor,
                 UIColor(hex: 0xFFF9ED).cgColor
@@ -31,7 +32,7 @@ final class WeatherAnimation {
                 UIColor(hex: 0x8CC7FE).cgColor,
                 UIColor(hex: 0xA9D4FF).cgColor
             ]
-        case .rain, .foggy:
+        case .rain, .foggy, .lightning, .tornado:
             gradientLayer.colors = [
                 UIColor(hex: 0x5B8189).cgColor,
                 UIColor(hex: 0xA5BABD).cgColor
@@ -42,12 +43,12 @@ final class WeatherAnimation {
                 UIColor(hex: 0x431C71).cgColor
             ]
         }
-
+        
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
-
+        
         view.layer.sublayers?.filter { $0 is CAGradientLayer }.forEach { $0.removeFromSuperlayer() }
-
+        
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
 }

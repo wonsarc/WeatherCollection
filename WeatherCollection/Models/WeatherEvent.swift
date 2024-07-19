@@ -8,11 +8,14 @@
 import UIKit
 
 enum WeatherType {
-    case foggy
-    case cloudy
     case sunny
+    case cloudy
+    case foggy
     case rain
+    case lightning
+    case tornado
     case snow
+    case rainbow
 }
 
 struct WeatherEvent: Hashable {

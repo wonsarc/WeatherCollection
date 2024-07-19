@@ -178,16 +178,22 @@ extension WeatherCollectionViewController {
 
         switch weatherEvent.type {
 
-        case.sunny:
+        case .sunny:
             animation = SunAnimation()
-        case .foggy:
-            animation = FogAnimation()
         case .cloudy:
             animation = CloudAnimation()
+        case .foggy:
+            animation = FogAnimation()
         case .rain:
             animation = RainAnimation()
+        case .lightning:
+            animation = LightningAnimation()
+        case .tornado:
+            animation = TornadoAnimation()
         case .snow:
             animation = SnowAnimation()
+        case .rainbow:
+            animation = RainbowAnimation()
         }
 
 

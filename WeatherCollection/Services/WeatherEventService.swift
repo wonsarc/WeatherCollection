@@ -68,29 +68,22 @@ final class WeatherEventService: WeatherEventServiceProtocol {
 
         events.append(
             WeatherEvent(
-                type: .sunny,
-                title: NSLocalizedString("events.weather.sun", comment: "")
+                type: .lightning,
+                title: NSLocalizedString("events.weather.lightning", comment: "")
             )
         )
 
         events.append(
             WeatherEvent(
-                type: .cloudy,
-                title: NSLocalizedString("events.weather.cloud", comment: "")
+                type: .tornado,
+                title: NSLocalizedString("events.weather.tornado", comment: "")
             )
         )
 
         events.append(
             WeatherEvent(
-                type: .foggy,
-                title: NSLocalizedString("events.weather.fog", comment: "")
-            )
-        )
-
-        events.append(
-            WeatherEvent(
-                type: .rain,
-                title: NSLocalizedString("events.weather.rain", comment: "")
+                type: .rainbow,
+                title: NSLocalizedString("events.weather.rainbow", comment: "")
             )
         )
     }

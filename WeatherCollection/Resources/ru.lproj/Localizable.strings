@@ -5,9 +5,11 @@
   Created by Artem Krasnov on 17.07.2024.
   
 */
-
+"events.weather.sun" = "Солнечно";
 "events.weather.cloud" = "Облачно";
 "events.weather.fog" = "Туман";
-"events.weather.sun" = "Солнечно";
 "events.weather.rain" = "Дождь";
+"events.weather.lightning" = "Гроза";
+"events.weather.tornado" = "Торнадо";
 "events.weather.snow" = "Снег";
+"events.weather.rainbow" = "Радуга";

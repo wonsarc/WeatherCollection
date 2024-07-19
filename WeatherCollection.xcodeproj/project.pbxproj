@@ -12,6 +12,9 @@
 		414B95C02C494F3B00763E61 /* SunAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B95BF2C494F3B00763E61 /* SunAnimation.swift */; };
 		414B95C22C4957AC00763E61 /* RainAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B95C12C4957AC00763E61 /* RainAnimation.swift */; };
 		414B95C42C49701C00763E61 /* SnowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B95C32C49701C00763E61 /* SnowAnimation.swift */; };
+		414B95C62C4A375B00763E61 /* RainbowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B95C52C4A375B00763E61 /* RainbowAnimation.swift */; };
+		414B95C82C4A3B3300763E61 /* LightningAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B95C72C4A3B3300763E61 /* LightningAnimation.swift */; };
+		414B95CB2C4A56BA00763E61 /* TornadoAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B95CA2C4A56BA00763E61 /* TornadoAnimation.swift */; };
 		41ACAF5C2C467AF70002E119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACAF5B2C467AF70002E119 /* AppDelegate.swift */; };
 		41ACAF652C467AF80002E119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41ACAF642C467AF80002E119 /* Assets.xcassets */; };
 		41ACAF732C467AF80002E119 /* WeatherCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACAF722C467AF80002E119 /* WeatherCollectionTests.swift */; };
@@ -54,6 +57,9 @@
 		414B95BF2C494F3B00763E61 /* SunAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunAnimation.swift; sourceTree = "<group>"; };
 		414B95C12C4957AC00763E61 /* RainAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainAnimation.swift; sourceTree = "<group>"; };
 		414B95C32C49701C00763E61 /* SnowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowAnimation.swift; sourceTree = "<group>"; };
+		414B95C52C4A375B00763E61 /* RainbowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowAnimation.swift; sourceTree = "<group>"; };
+		414B95C72C4A3B3300763E61 /* LightningAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightningAnimation.swift; sourceTree = "<group>"; };
+		414B95CA2C4A56BA00763E61 /* TornadoAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TornadoAnimation.swift; sourceTree = "<group>"; };
 		41ACAF582C467AF70002E119 /* WeatherCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41ACAF5B2C467AF70002E119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41ACAF642C467AF80002E119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -208,6 +214,9 @@
 				414B95BF2C494F3B00763E61 /* SunAnimation.swift */,
 				414B95C12C4957AC00763E61 /* RainAnimation.swift */,
 				414B95C32C49701C00763E61 /* SnowAnimation.swift */,
+				414B95C52C4A375B00763E61 /* RainbowAnimation.swift */,
+				414B95C72C4A3B3300763E61 /* LightningAnimation.swift */,
+				414B95CA2C4A56BA00763E61 /* TornadoAnimation.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -361,13 +370,16 @@
 				41ACAFB32C47F8A30002E119 /* WeatherAnimation.swift in Sources */,
 				41ACAFBA2C47F9540002E119 /* CloudAnimation.swift in Sources */,
 				41ACAF912C468CB80002E119 /* WeatherCollectionViewController.swift in Sources */,
+				414B95C82C4A3B3300763E61 /* LightningAnimation.swift in Sources */,
 				41ACAF932C468DB10002E119 /* WeatherViewCell.swift in Sources */,
 				41ACAFB52C47F8BF0002E119 /* FogAnimation.swift in Sources */,
 				41ACAFA32C46AF820002E119 /* WeatherCollectionPresenter.swift in Sources */,
 				41ACAF9F2C46A1400002E119 /* WeatherEventService.swift in Sources */,
+				414B95CB2C4A56BA00763E61 /* TornadoAnimation.swift in Sources */,
 				414B95C22C4957AC00763E61 /* RainAnimation.swift in Sources */,
 				414B95C02C494F3B00763E61 /* SunAnimation.swift in Sources */,
 				414B95C42C49701C00763E61 /* SnowAnimation.swift in Sources */,
+				414B95C62C4A375B00763E61 /* RainbowAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
