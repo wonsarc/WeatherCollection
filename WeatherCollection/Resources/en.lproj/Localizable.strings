@@ -9,8 +9,8 @@
 "events.weather.sun" = "Sunny";
 "events.weather.cloud" = "Cloudy";
 "events.weather.fog" = "Foggy";
-"events.weather.rain" = "Rain";
+"events.weather.rain" = "Rainly";
 "events.weather.lightning" = "Lightning";
-"events.weather.tornado" = "Tornado";
-"events.weather.snow" = "Snow";
+"events.weather.windy" = "Windy";
+"events.weather.snow" = "Snowly";
 "events.weather.rainbow" = "Rainbow";

@@ -1,5 +1,5 @@
 //
-//  TornadoAnimation.swift
+//  WindyAnimation.swift
 //  WeatherCollection
 //
 //  Created by Artem Krasnov on 19.07.2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TornadoAnimation: WeatherAnimationProtocol {
+final class WindyAnimation: WeatherAnimationProtocol {
 
     // MARK: - Public Properties
 
@@ -20,15 +20,15 @@ final class TornadoAnimation: WeatherAnimationProtocol {
 
         WeatherAnimation().setupBackgroundColor(to: view, weather: .lightning)
 
-        let tornadoLayer = createTornadoAnimation(bounds: view.bounds)
-        view.layer.addSublayer(tornadoLayer)
-        view.weatherLayers.append(tornadoLayer)
+        let windyLayer = createWindyAnimation(bounds: view.bounds)
+        view.layer.addSublayer(windyLayer)
+        view.weatherLayers.append(windyLayer)
 
     }
 
     // MARK: - Private Methods
 
-    private func createTornadoAnimation(bounds: CGRect) -> CAEmitterLayer {
+    private func createWindyAnimation(bounds: CGRect) -> CAEmitterLayer {
         let emitterLayer = CAEmitterLayer()
         emitterLayer.frame = bounds
 

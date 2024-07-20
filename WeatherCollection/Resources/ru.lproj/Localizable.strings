@@ -10,6 +10,6 @@
 "events.weather.fog" = "Туман";
 "events.weather.rain" = "Дождь";
 "events.weather.lightning" = "Гроза";
-"events.weather.tornado" = "Торнадо";
+"events.weather.windy" = "Ветренно";
 "events.weather.snow" = "Снег";
 "events.weather.rainbow" = "Радуга";

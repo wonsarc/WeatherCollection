@@ -17,7 +17,7 @@ final class WeatherEventService: WeatherEventServiceProtocol {
 
     private lazy var events: [WeatherEvent] = {
         var events: [WeatherEvent] = []
-        fillEvents(&events)
+        WeatherEventService.fillEvents(&events)
         return events
     }()
 
@@ -29,62 +29,11 @@ final class WeatherEventService: WeatherEventServiceProtocol {
 
     // MARK: - Private Methods
 
-    private func fillEvents(_ events: inout [WeatherEvent]) {
+    private static func fillEvents(_ events: inout [WeatherEvent]) {
+        let types: [WeatherType] = [.sunny, .cloudy, .foggy, .rain, .snow, .lightning, .windy, .rainbow]
 
-        events.append(
-            WeatherEvent(
-                type: .sunny,
-                title: NSLocalizedString("events.weather.sun", comment: "")
-            )
-        )
-
-        events.append(
-            WeatherEvent(
-                type: .cloudy,
-                title: NSLocalizedString("events.weather.cloud", comment: "")
-            )
-        )
-
-        events.append(
-            WeatherEvent(
-                type: .foggy,
-                title: NSLocalizedString("events.weather.fog", comment: "")
-            )
-        )
-
-        events.append(
-            WeatherEvent(
-                type: .rain,
-                title: NSLocalizedString("events.weather.rain", comment: "")
-            )
-        )
-
-        events.append(
-            WeatherEvent(
-                type: .snow,
-                title: NSLocalizedString("events.weather.snow", comment: "")
-            )
-        )
-
-        events.append(
-            WeatherEvent(
-                type: .lightning,
-                title: NSLocalizedString("events.weather.lightning", comment: "")
-            )
-        )
-
-        events.append(
-            WeatherEvent(
-                type: .tornado,
-                title: NSLocalizedString("events.weather.tornado", comment: "")
-            )
-        )
-
-        events.append(
-            WeatherEvent(
-                type: .rainbow,
-                title: NSLocalizedString("events.weather.rainbow", comment: "")
-            )
-        )
+        for type in types {
+            events.append(WeatherEvent(type: type))
+        }
     }
 }

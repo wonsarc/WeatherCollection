@@ -26,9 +26,7 @@ final class WeatherView: UIView {
     // MARK: - Public Methods
 
     func clearWeatherLayers() {
-        for layer in weatherLayers {
-            layer.removeFromSuperlayer()
-        }
+        weatherLayers.forEach { $0.removeFromSuperlayer() }
         weatherLayers.removeAll()
     }
 }

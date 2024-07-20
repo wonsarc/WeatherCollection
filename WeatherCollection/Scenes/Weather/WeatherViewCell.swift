@@ -48,7 +48,7 @@ final class WeatherViewCell: UICollectionViewCell {
     
     func configCell(with event: WeatherEvent, isSelected: Bool) {
         
-        nameLabel.text = NSLocalizedString(event.title, comment: "")
+        nameLabel.text = NSLocalizedString(event.type.title, comment: "")
         
         layer.borderColor = isSelected ? UIColor.systemBlue.cgColor : UIColor.systemGray.cgColor
         

@@ -8,18 +8,27 @@
 import UIKit
 
 enum WeatherType {
-    case sunny
-    case cloudy
-    case foggy
-    case rain
-    case lightning
-    case tornado
-    case snow
-    case rainbow
+    case sunny, cloudy, foggy, rain, lightning, windy, snow, rainbow
 }
 
 struct WeatherEvent: Hashable {
     let id = UUID()
     let type: WeatherType
-    let title: String
+}
+
+extension WeatherType {
+
+    var title: String {
+        
+        switch self {
+        case .sunny: return NSLocalizedString("events.weather.sun", comment: "")
+        case .cloudy: return NSLocalizedString("events.weather.cloud", comment: "")
+        case .foggy: return NSLocalizedString("events.weather.fog", comment: "")
+        case .rain: return NSLocalizedString("events.weather.rain", comment: "")
+        case .snow: return NSLocalizedString("events.weather.snow", comment: "")
+        case .lightning: return NSLocalizedString("events.weather.lightning", comment: "")
+        case .windy: return NSLocalizedString("events.weather.windy", comment: "")
+        case .rainbow: return NSLocalizedString("events.weather.rainbow", comment: "")
+        }
+    }
 }

@@ -14,7 +14,8 @@
 		414B95C42C49701C00763E61 /* SnowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B95C32C49701C00763E61 /* SnowAnimation.swift */; };
 		414B95C62C4A375B00763E61 /* RainbowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B95C52C4A375B00763E61 /* RainbowAnimation.swift */; };
 		414B95C82C4A3B3300763E61 /* LightningAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B95C72C4A3B3300763E61 /* LightningAnimation.swift */; };
-		414B95CB2C4A56BA00763E61 /* TornadoAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B95CA2C4A56BA00763E61 /* TornadoAnimation.swift */; };
+		414B95CB2C4A56BA00763E61 /* WindyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B95CA2C4A56BA00763E61 /* WindyAnimation.swift */; };
+		414B95CE2C4C37C900763E61 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B95CD2C4C37C900763E61 /* Colors.swift */; };
 		41ACAF5C2C467AF70002E119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACAF5B2C467AF70002E119 /* AppDelegate.swift */; };
 		41ACAF652C467AF80002E119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41ACAF642C467AF80002E119 /* Assets.xcassets */; };
 		41ACAF732C467AF80002E119 /* WeatherCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACAF722C467AF80002E119 /* WeatherCollectionTests.swift */; };
@@ -23,7 +24,6 @@
 		41ACAF912C468CB80002E119 /* WeatherCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACAF902C468CB80002E119 /* WeatherCollectionViewController.swift */; };
 		41ACAF932C468DB10002E119 /* WeatherViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACAF922C468DB10002E119 /* WeatherViewCell.swift */; };
 		41ACAF982C469E650002E119 /* WeatherEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACAF972C469E650002E119 /* WeatherEvent.swift */; };
-		41ACAF9A2C469FCD0002E119 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACAF992C469FCD0002E119 /* Section.swift */; };
 		41ACAF9F2C46A1400002E119 /* WeatherEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACAF9E2C46A1400002E119 /* WeatherEventService.swift */; };
 		41ACAFA32C46AF820002E119 /* WeatherCollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACAFA22C46AF820002E119 /* WeatherCollectionPresenter.swift */; };
 		41ACAFB32C47F8A30002E119 /* WeatherAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ACAFB22C47F8A30002E119 /* WeatherAnimation.swift */; };
@@ -59,7 +59,8 @@
 		414B95C32C49701C00763E61 /* SnowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowAnimation.swift; sourceTree = "<group>"; };
 		414B95C52C4A375B00763E61 /* RainbowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowAnimation.swift; sourceTree = "<group>"; };
 		414B95C72C4A3B3300763E61 /* LightningAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightningAnimation.swift; sourceTree = "<group>"; };
-		414B95CA2C4A56BA00763E61 /* TornadoAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TornadoAnimation.swift; sourceTree = "<group>"; };
+		414B95CA2C4A56BA00763E61 /* WindyAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindyAnimation.swift; sourceTree = "<group>"; };
+		414B95CD2C4C37C900763E61 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		41ACAF582C467AF70002E119 /* WeatherCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41ACAF5B2C467AF70002E119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41ACAF642C467AF80002E119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 		41ACAF902C468CB80002E119 /* WeatherCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewController.swift; sourceTree = "<group>"; };
 		41ACAF922C468DB10002E119 /* WeatherViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewCell.swift; sourceTree = "<group>"; };
 		41ACAF972C469E650002E119 /* WeatherEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEvent.swift; sourceTree = "<group>"; };
-		41ACAF992C469FCD0002E119 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		41ACAF9E2C46A1400002E119 /* WeatherEventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEventService.swift; sourceTree = "<group>"; };
 		41ACAFA22C46AF820002E119 /* WeatherCollectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionPresenter.swift; sourceTree = "<group>"; };
 		41ACAFB22C47F8A30002E119 /* WeatherAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAnimation.swift; sourceTree = "<group>"; };
@@ -108,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		414B95CC2C4C37B300763E61 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				414B95CD2C4C37C900763E61 /* Colors.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
 		41ACAF4F2C467AF70002E119 = {
 			isa = PBXGroup;
 			children = (
@@ -131,10 +139,11 @@
 		41ACAF5A2C467AF70002E119 /* WeatherCollection */ = {
 			isa = PBXGroup;
 			children = (
+				414B95CC2C4C37B300763E61 /* DesignSystem */,
 				41ACAF9B2C46A0EF0002E119 /* Services */,
 				41ACAF942C469E470002E119 /* Models */,
-				41ACAF8E2C468C6E0002E119 /* Resources */,
 				41ACAF8D2C468C3B0002E119 /* Scenes */,
+				41ACAF8E2C468C6E0002E119 /* Resources */,
 				41ACAF5B2C467AF70002E119 /* AppDelegate.swift */,
 				41ACAF692C467AF80002E119 /* Info.plist */,
 			);
@@ -181,9 +190,9 @@
 			isa = PBXGroup;
 			children = (
 				41ACAFB62C47F8F70002E119 /* WeatherView */,
+				41ACAFA22C46AF820002E119 /* WeatherCollectionPresenter.swift */,
 				41ACAF902C468CB80002E119 /* WeatherCollectionViewController.swift */,
 				41ACAF922C468DB10002E119 /* WeatherViewCell.swift */,
-				41ACAFA22C46AF820002E119 /* WeatherCollectionPresenter.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -192,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				41ACAF972C469E650002E119 /* WeatherEvent.swift */,
-				41ACAF992C469FCD0002E119 /* Section.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,7 +224,7 @@
 				414B95C32C49701C00763E61 /* SnowAnimation.swift */,
 				414B95C52C4A375B00763E61 /* RainbowAnimation.swift */,
 				414B95C72C4A3B3300763E61 /* LightningAnimation.swift */,
-				414B95CA2C4A56BA00763E61 /* TornadoAnimation.swift */,
+				414B95CA2C4A56BA00763E61 /* WindyAnimation.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -365,8 +373,8 @@
 			files = (
 				41ACAF982C469E650002E119 /* WeatherEvent.swift in Sources */,
 				41ACAF5C2C467AF70002E119 /* AppDelegate.swift in Sources */,
-				41ACAF9A2C469FCD0002E119 /* Section.swift in Sources */,
 				41ACAFB82C47F90B0002E119 /* WeatherView.swift in Sources */,
+				414B95CE2C4C37C900763E61 /* Colors.swift in Sources */,
 				41ACAFB32C47F8A30002E119 /* WeatherAnimation.swift in Sources */,
 				41ACAFBA2C47F9540002E119 /* CloudAnimation.swift in Sources */,
 				41ACAF912C468CB80002E119 /* WeatherCollectionViewController.swift in Sources */,
@@ -375,7 +383,7 @@
 				41ACAFB52C47F8BF0002E119 /* FogAnimation.swift in Sources */,
 				41ACAFA32C46AF820002E119 /* WeatherCollectionPresenter.swift in Sources */,
 				41ACAF9F2C46A1400002E119 /* WeatherEventService.swift in Sources */,
-				414B95CB2C4A56BA00763E61 /* TornadoAnimation.swift in Sources */,
+				414B95CB2C4A56BA00763E61 /* WindyAnimation.swift in Sources */,
 				414B95C22C4957AC00763E61 /* RainAnimation.swift in Sources */,
 				414B95C02C494F3B00763E61 /* SunAnimation.swift in Sources */,
 				414B95C42C49701C00763E61 /* SnowAnimation.swift in Sources */,

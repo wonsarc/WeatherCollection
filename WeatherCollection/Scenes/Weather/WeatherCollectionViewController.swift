@@ -12,7 +12,11 @@ protocol WeatherCollectionViewProtocol: AnyObject {
     var presenter: WeatherCollectionPresenterProtocol? { get set }
 
     func didSelectWeatherEvent()
-    func selectWeatherEvent(at weatherEvent: WeatherEvent)
+    func updateWeatherView(for weatherEvent: WeatherEvent)
+}
+
+enum Section {
+    case main
 }
 
 final class WeatherCollectionViewController: UIViewController, WeatherCollectionViewProtocol {
@@ -38,19 +42,20 @@ final class WeatherCollectionViewController: UIViewController, WeatherCollection
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let weatherCollectionPresenter = WeatherCollectionPresenter()
+        let weatherCollectionPresenter = WeatherCollectionPresenter(with: weatherUIView)
         self.presenter = weatherCollectionPresenter
         weatherCollectionPresenter.view = self
 
         setupWeatherUIView()
         setupWeatherCollectionView()
+
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         applyInitialSnapshot()
-        selectFirstEvent()
+        selectRandomEvent()
     }
 
     // MARK: - Public Methods
@@ -61,14 +66,20 @@ final class WeatherCollectionViewController: UIViewController, WeatherCollection
         presenter?.didSelectWeatherEvent(selectedIndexPath)
     }
 
-    func selectWeatherEvent(at weatherEvent: WeatherEvent) {
-        updateWeatherView(on: weatherEvent)
-        weatherCollectionView?.reloadData()
-    }
+    func updateWeatherView(for weatherEvent: WeatherEvent) {
+
+       UIView.transition(with: weatherUIView,
+                         duration: 0.5,
+                         options: [.transitionCrossDissolve, .curveEaseInOut],
+                         animations: { self.presenter?.currentAnimation?.apply(to: self.weatherUIView) },
+                         completion: nil
+       )
+       weatherCollectionView?.reloadData()
+   }
 
     // MARK: - Private Methods
 
-    private func selectFirstEvent() {
+    private func selectRandomEvent() {
         guard let events = presenter?.events,
               !events.isEmpty else { return }
 
@@ -171,45 +182,14 @@ extension WeatherCollectionViewController {
         snapshot.appendItems(presenter?.events ?? [], toSection: .main)
         dataSource.apply(snapshot, animatingDifferences: true)
     }
-
-    private func updateWeatherView(on weatherEvent: WeatherEvent) {
-
-        let animation: WeatherAnimationProtocol
-
-        switch weatherEvent.type {
-
-        case .sunny:
-            animation = SunAnimation()
-        case .cloudy:
-            animation = CloudAnimation()
-        case .foggy:
-            animation = FogAnimation()
-        case .rain:
-            animation = RainAnimation()
-        case .lightning:
-            animation = LightningAnimation()
-        case .tornado:
-            animation = TornadoAnimation()
-        case .snow:
-            animation = SnowAnimation()
-        case .rainbow:
-            animation = RainbowAnimation()
-        }
-
-
-        UIView.transition(with: weatherUIView, duration: 0.5, options: [.transitionCrossDissolve, .curveEaseInOut], animations: {
-            animation.apply(to: self.weatherUIView)
-        }, completion: nil)
-    }
 }
 
 // MARK: - UICollectionViewDelegate
 
 extension WeatherCollectionViewController: UICollectionViewDelegate {
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndexPath = indexPath
-        guard let selectedEvent = presenter?.events[indexPath.item] else { return }
-        updateWeatherView(on: selectedEvent)
         didSelectWeatherEvent()
     }
 }
