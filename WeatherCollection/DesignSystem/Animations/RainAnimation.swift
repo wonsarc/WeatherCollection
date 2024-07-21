@@ -24,7 +24,7 @@ final class RainAnimation: WeatherAnimationProtocol {
 
     private func createLayer(with bounds: CGRect) -> CALayer {
         let layer = CALayer()
-        layer.backgroundColor = UIColor(hex: 0xCBE1EE).cgColor
+        layer.backgroundColor = UIColor.rainColor.cgColor
 
         let layerWidth = CGFloat.random(in: 1.0...3.0)
         let layerHeight = bounds.height

@@ -9,6 +9,4 @@ import UIKit
 
 protocol WeatherAnimationProtocol {
     func createWeatherAnimationLayers(bounds: CGRect) -> [CALayer]
-//    func createLayer(with bounds: CGRect) -> CALayer
-//    func createLayerAnimation(for layer: CALayer)
 }

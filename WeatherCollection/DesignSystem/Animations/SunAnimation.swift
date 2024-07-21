@@ -10,18 +10,14 @@ import UIKit
 final class SunAnimation: WeatherAnimationProtocol {
     
     func createWeatherAnimationLayers(bounds: CGRect) -> [CALayer] {
-        var layers: [CALayer] = []
-        
         let layer = createLayer(with: bounds)
-        addLayerAnimation(for: layer, with: bounds)
-        layers.append(layer)
-        
+        addLayerAnimation(for: layer, with: bounds)        
         return [layer]
     }
     
     private func createLayer(with bounds: CGRect) -> CALayer {
         let layer = CALayer()
-        layer.backgroundColor = UIColor(hex: 0xFAC555).cgColor
+        layer.backgroundColor = UIColor.sunColor.cgColor
         layer.bounds = CGRect(
             x: 0,
             y: 0,

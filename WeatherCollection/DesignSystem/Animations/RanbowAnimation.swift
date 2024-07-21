@@ -19,14 +19,15 @@ final class RainbowAnimation: WeatherAnimationProtocol {
         let layer = CAGradientLayer()
         layer.frame = bounds
         layer.colors = [
-            UIColor(hex: 0xFB6849).cgColor,
-            UIColor(hex: 0xFFBC01).cgColor,
-            UIColor(hex: 0xFEDA42).cgColor,
-            UIColor(hex: 0x14D3A1).cgColor,
-            UIColor(hex: 0x35E6E6).cgColor,
-            UIColor(hex: 0x2195FF).cgColor,
-            UIColor(hex: 0x9B61FF).cgColor
+            UIColor.redRainbow.cgColor,
+            UIColor.orangeRainbow.cgColor,
+            UIColor.yellowRainbow.cgColor,
+            UIColor.greenRainbow.cgColor,
+            UIColor.blueRainbow.cgColor,
+            UIColor.darkBlueRainbow.cgColor,
+            UIColor.fioletRainbow.cgColor,
         ]
+
         layer.startPoint = CGPoint(x: 0, y: 0)
         layer.endPoint = CGPoint(x: 1, y: 1)
         return layer
@@ -36,13 +37,13 @@ final class RainbowAnimation: WeatherAnimationProtocol {
         let animation = CABasicAnimation(keyPath: "colors")
         animation.fromValue = layer.colors
         animation.toValue = [
-            UIColor(hex: 0x9B61FF).cgColor,
-            UIColor(hex: 0x2195FF).cgColor,
-            UIColor(hex: 0x35E6E6).cgColor,
-            UIColor(hex: 0x14D3A1).cgColor,
-            UIColor(hex: 0xFEDA42).cgColor,
-            UIColor(hex: 0xFFBC01).cgColor,
-            UIColor(hex: 0xFB6849).cgColor
+            UIColor.fioletRainbow.cgColor,
+            UIColor.darkBlueRainbow.cgColor,
+            UIColor.blueRainbow.cgColor,
+            UIColor.greenRainbow.cgColor,
+            UIColor.yellowRainbow.cgColor,
+            UIColor.orangeRainbow.cgColor,
+            UIColor.redRainbow.cgColor
         ]
         animation.duration = 5.0
         animation.autoreverses = true
