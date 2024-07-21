@@ -30,7 +30,7 @@ final class WeatherCollectionViewController: UIViewController, WeatherCollection
     private var weatherCollectionView: UICollectionView?
     private var selectedIndexPath: IndexPath?
 
-    private lazy var weatherUIView: WeatherView = {
+    private lazy var weatherUIView: WeatherViewProtocol = {
         let weatherUIView = WeatherView()
         weatherUIView.translatesAutoresizingMaskIntoConstraints = false
         return weatherUIView

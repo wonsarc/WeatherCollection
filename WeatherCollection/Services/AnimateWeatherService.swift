@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AnimateWeatherServiceProtocol {
-    func changeAnimation(to view: WeatherView, type: WeatherType)
+    func changeAnimation(to view: WeatherViewProtocol, type: WeatherType)
 }
 
 final class AnimateWeatherService: AnimateWeatherServiceProtocol {
@@ -19,18 +19,18 @@ final class AnimateWeatherService: AnimateWeatherServiceProtocol {
 
     // MARK: - Public Methods
 
-    func changeAnimation(to view: WeatherView, type: WeatherType) {
+    func changeAnimation(to view: WeatherViewProtocol, type: WeatherType) {
         bounds = view.bounds
 
         let layers = fetchWeatherAnimationLayers(for: type)
         guard !layers.isEmpty else { return }
 
-        view.clearWeatherLayers()
+        view.removeAllSublayers()
 
         setupBackgroundColor(to: view, weather: type)
 
         for layer in layers {
-            view.layer.addSublayer(layer)
+            view.addSublayer(layer)
         }
     }
 
@@ -51,7 +51,7 @@ final class AnimateWeatherService: AnimateWeatherServiceProtocol {
         }
     }
 
-    private func setupBackgroundColor(to view: WeatherView, weather: WeatherType) {
+    private func setupBackgroundColor(to view: WeatherViewProtocol, weather: WeatherType) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
 
@@ -61,7 +61,6 @@ final class AnimateWeatherService: AnimateWeatherServiceProtocol {
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
 
-        view.layer.sublayers?.filter { $0 is CAGradientLayer }.forEach { $0.removeFromSuperlayer() }
-        view.layer.insertSublayer(gradientLayer, at: 0)
+        view.insertSublayer(gradientLayer, at: 0)
     }
 }

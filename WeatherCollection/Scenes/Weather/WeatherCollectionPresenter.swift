@@ -13,7 +13,7 @@ protocol WeatherCollectionPresenterProtocol {
     var events: [WeatherEvent] { get }
 
     func didSelectWeatherEvent(_ indexPath: IndexPath)
-    func changeAnimate(on view: WeatherView)
+    func changeAnimate(on view: WeatherViewProtocol)
 }
 
 final class WeatherCollectionPresenter: WeatherCollectionPresenterProtocol {
@@ -43,7 +43,7 @@ final class WeatherCollectionPresenter: WeatherCollectionPresenterProtocol {
         view?.updateWeatherView(for: events[indexPath.row])
     }
 
-    func changeAnimate(on views: WeatherView) {
+    func changeAnimate(on views: WeatherViewProtocol) {
         guard let currentType = currentType else { return }
         animateWeatherService.changeAnimation(to: views, type: currentType)
     }
