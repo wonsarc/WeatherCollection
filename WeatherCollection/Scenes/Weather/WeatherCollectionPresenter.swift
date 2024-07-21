@@ -10,10 +10,10 @@ import Foundation
 protocol WeatherCollectionPresenterProtocol {
 
     var view: WeatherCollectionViewProtocol? { get set }
-    var currentAnimation: WeatherAnimationProtocol? { get }
     var events: [WeatherEvent] { get }
 
     func didSelectWeatherEvent(_ indexPath: IndexPath)
+    func changeAnimate(on view: WeatherView)
 }
 
 final class WeatherCollectionPresenter: WeatherCollectionPresenterProtocol {
@@ -21,40 +21,30 @@ final class WeatherCollectionPresenter: WeatherCollectionPresenterProtocol {
     // MARK: - Public Properties
 
     weak var view: WeatherCollectionViewProtocol?
-
     lazy var events: [WeatherEvent] = weatherEventService.fetchWeatherEvents()
-
-    var currentAnimation:  WeatherAnimationProtocol?
 
     // MARK: - Private Properties
 
     private let weatherEventService: WeatherEventServiceProtocol
+    private let animateWeatherService: AnimateWeatherServiceProtocol
+    private var currentType: WeatherType?
 
     // MARK: - Initializer
 
-    init(with weatherView: WeatherView) {
+    init() {
         self.weatherEventService = WeatherEventService()
+        self.animateWeatherService = AnimateWeatherService()
     }
 
     // MARK: - Public Methods
 
     func didSelectWeatherEvent(_ indexPath: IndexPath) {
-        currentAnimation = updateCurrentAnimation(set: events[indexPath.row])
+        currentType = events[indexPath.row].type
         view?.updateWeatherView(for: events[indexPath.row])
     }
 
-    // MARK: - Private Methods
-
-    private func updateCurrentAnimation(set event: WeatherEvent) -> WeatherAnimationProtocol {
-        switch event.type {
-        case .sunny: return SunAnimation()
-        case .cloudy: return CloudAnimation()
-        case .foggy: return FogAnimation()
-        case .rain: return RainAnimation()
-        case .lightning: return LightningAnimation()
-        case .windy: return WindyAnimation()
-        case .snow: return SnowAnimation()
-        case .rainbow: return RainbowAnimation()
-        }
+    func changeAnimate(on views: WeatherView) {
+        guard let currentType = currentType else { return }
+        animateWeatherService.changeAnimation(to: views, type: currentType)
     }
 }

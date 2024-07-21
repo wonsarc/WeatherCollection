@@ -9,10 +9,6 @@ import UIKit
 
 final class WeatherView: UIView {
 
-    // MARK: - Public Properties
-
-    var weatherLayers: [CALayer] = []
-
     // MARK: - Initializers
 
     override init(frame: CGRect) {
@@ -26,7 +22,6 @@ final class WeatherView: UIView {
     // MARK: - Public Methods
 
     func clearWeatherLayers() {
-        weatherLayers.forEach { $0.removeFromSuperlayer() }
-        weatherLayers.removeAll()
+        self.layer.sublayers?.removeAll()
     }
 }

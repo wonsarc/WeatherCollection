@@ -8,9 +8,8 @@
 import UIKit
 
 protocol WeatherCollectionViewProtocol: AnyObject {
-
     var presenter: WeatherCollectionPresenterProtocol? { get set }
-
+    
     func didSelectWeatherEvent()
     func updateWeatherView(for weatherEvent: WeatherEvent)
 }
@@ -42,13 +41,12 @@ final class WeatherCollectionViewController: UIViewController, WeatherCollection
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let weatherCollectionPresenter = WeatherCollectionPresenter(with: weatherUIView)
+        let weatherCollectionPresenter = WeatherCollectionPresenter()
         self.presenter = weatherCollectionPresenter
         weatherCollectionPresenter.view = self
 
         setupWeatherUIView()
         setupWeatherCollectionView()
-
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -67,13 +65,12 @@ final class WeatherCollectionViewController: UIViewController, WeatherCollection
     }
 
     func updateWeatherView(for weatherEvent: WeatherEvent) {
-
-       UIView.transition(with: weatherUIView,
-                         duration: 0.5,
-                         options: [.transitionCrossDissolve, .curveEaseInOut],
-                         animations: { self.presenter?.currentAnimation?.apply(to: self.weatherUIView) },
-                         completion: nil
-       )
+        UIView.transition(with: weatherUIView,
+                          duration: 0.5,
+                          options: [.transitionCrossDissolve, .curveEaseInOut],
+                          animations: { self.presenter?.changeAnimate(on: self.weatherUIView)},
+                          completion: nil
+        )
        weatherCollectionView?.reloadData()
    }
 
@@ -124,7 +121,6 @@ final class WeatherCollectionViewController: UIViewController, WeatherCollection
 extension WeatherCollectionViewController {
 
     private func configureCollectionView() {
-
         let item = NSCollectionLayoutItem(
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1),
