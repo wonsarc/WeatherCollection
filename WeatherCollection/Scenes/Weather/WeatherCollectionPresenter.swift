@@ -8,10 +8,8 @@
 import Foundation
 
 protocol WeatherCollectionPresenterProtocol {
-
-    var view: WeatherCollectionViewProtocol? { get set }
+    var view: WeatherCollectionViewProtocol? { get }
     var events: [WeatherEvent] { get }
-
     func didSelectWeatherEvent(_ indexPath: IndexPath)
     func changeAnimate(on view: WeatherViewProtocol)
 }
@@ -43,8 +41,8 @@ final class WeatherCollectionPresenter: WeatherCollectionPresenterProtocol {
         view?.updateWeatherView(for: events[indexPath.row])
     }
 
-    func changeAnimate(on views: WeatherViewProtocol) {
+    func changeAnimate(on view: WeatherViewProtocol) {
         guard let currentType = currentType else { return }
-        animateWeatherService.changeAnimation(to: views, type: currentType)
+        animateWeatherService.changeAnimation(to: view, type: currentType)
     }
 }

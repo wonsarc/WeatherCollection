@@ -38,7 +38,7 @@ final class AnimateWeatherService: AnimateWeatherServiceProtocol {
 
     private func fetchWeatherAnimationLayers(for type: WeatherType) -> [CALayer] {
         guard let bounds = bounds else { return [] }
-        
+
         switch type {
         case .sunny: return SunAnimation().createWeatherAnimationLayers(bounds: bounds)
         case .cloudy: return CloudAnimation().createWeatherAnimationLayers(bounds: bounds)
@@ -61,6 +61,6 @@ final class AnimateWeatherService: AnimateWeatherServiceProtocol {
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
 
-        view.insertSublayer(gradientLayer, at: 0)
+        view.addSublayer(gradientLayer)
     }
 }

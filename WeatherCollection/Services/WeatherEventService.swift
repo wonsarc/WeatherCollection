@@ -5,7 +5,7 @@
 //  Created by Artem Krasnov on 16.07.2024.
 //
 
-import UIKit
+import Foundation
 
 protocol WeatherEventServiceProtocol {
     func fetchWeatherEvents() -> [WeatherEvent]
@@ -16,9 +16,7 @@ final class WeatherEventService: WeatherEventServiceProtocol {
     // MARK: - Private Properties
 
     private lazy var events: [WeatherEvent] = {
-        var events: [WeatherEvent] = []
-        WeatherEventService.fillEvents(&events)
-        return events
+        WeatherEventService.createEvents()
     }()
 
     // MARK: - Public Methods
@@ -29,11 +27,8 @@ final class WeatherEventService: WeatherEventServiceProtocol {
 
     // MARK: - Private Methods
 
-    private static func fillEvents(_ events: inout [WeatherEvent]) {
+    private static func createEvents() -> [WeatherEvent] {
         let types: [WeatherType] = [.sunny, .cloudy, .foggy, .rain, .snow, .lightning, .windy, .rainbow]
-
-        for type in types {
-            events.append(WeatherEvent(type: type))
-        }
+        return types.map { WeatherEvent(type: $0) }
     }
 }

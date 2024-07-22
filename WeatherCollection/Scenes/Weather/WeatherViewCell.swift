@@ -27,7 +27,6 @@ final class WeatherViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupNameLabel()
     }
     
@@ -47,15 +46,10 @@ final class WeatherViewCell: UICollectionViewCell {
     // MARK: - Public Methods
     
     func configCell(with event: WeatherEvent, isSelected: Bool) {
-        
-        nameLabel.text = NSLocalizedString(event.type.title, comment: "")
-        
+        nameLabel.text = event.type.title
+
         layer.borderColor = isSelected ? UIColor.systemBlue.cgColor : UIColor.systemGray.cgColor
-        
-        self.backgroundColor = isSelected ?
-        UIColor(resource: .accent) :
-        UIColor(resource: .accent).withAlphaComponent(0.3)
-        
+        self.backgroundColor = .accent.withAlphaComponent(isSelected ? 1 : 0.3)
         self.isUserInteractionEnabled = !isSelected
     }
     
@@ -63,7 +57,6 @@ final class WeatherViewCell: UICollectionViewCell {
     
     private func setupNameLabel() {
         contentView.addSubview(nameLabel)
-        
         nameLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
     }

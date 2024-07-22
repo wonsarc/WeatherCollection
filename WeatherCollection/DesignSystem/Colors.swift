@@ -9,17 +9,7 @@ import UIKit
 
 extension UIColor {
 
-    convenience init(hex: Int, alpha: CGFloat = 1.0) {
-        self.init(
-            red: CGFloat((hex & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((hex & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(hex & 0x0000FF) / 255.0,
-            alpha: alpha
-        )
-    }
-
-    // Rainbow Colors
-
+    /// Rainbow Colors
     static let redRainbow = UIColor(hex: 0xFB6849)
     static let orangeRainbow = UIColor(hex: 0xFFBC01)
     static let yellowRainbow = UIColor(hex: 0xFEDA42)
@@ -28,12 +18,11 @@ extension UIColor {
     static let darkBlueRainbow = UIColor(hex: 0x2195FF)
     static let fioletRainbow = UIColor(hex: 0x9B61FF)
 
-
-    // Weather Colors
-
+    /// Weather Colors
     static let rainColor = UIColor(hex: 0xCBE1EE)
     static let sunColor = UIColor(hex: 0xFAC555)
 
+    /// Background Weather Colors
     struct WeatherColors {
         let topColor: CGColor
         let bottomColor: CGColor
@@ -54,5 +43,15 @@ extension UIColor {
                 bottomColor = UIColor(hex: 0x431C71).cgColor
             }
         }
+    }
+
+    /// Create UIColor from hex
+    convenience init(hex: Int, alpha: CGFloat = 1.0) {
+        self.init(
+            red: CGFloat((hex & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((hex & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(hex & 0x0000FF) / 255.0,
+            alpha: alpha
+        )
     }
 }
