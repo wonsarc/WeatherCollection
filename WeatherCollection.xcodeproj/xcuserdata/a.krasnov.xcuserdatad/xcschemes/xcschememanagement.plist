@@ -6,8 +6,28 @@
 	<dict>
 		<key>WeatherCollection.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>41ACAF572C467AF70002E119</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>41ACAF6D2C467AF80002E119</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>41ACAF772C467AF80002E119</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
