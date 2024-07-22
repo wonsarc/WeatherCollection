@@ -65,6 +65,7 @@
 		41453EBF2C4D8E7F004D2CB7 /* RanbowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RanbowAnimation.swift; sourceTree = "<group>"; };
 		41453EC32C4D95D2004D2CB7 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		41453EC52C4D9E40004D2CB7 /* WeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherType.swift; sourceTree = "<group>"; };
+		41453EC72C4E851C004D2CB7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		414B95B62C4850E200763E61 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		414B95BC2C48521E00763E61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		414B95BE2C48523400763E61 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -131,8 +132,8 @@
 		414B95CC2C4C37B300763E61 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
-				41453EAE2C4D5906004D2CB7 /* Animations */,
 				414B95CD2C4C37C900763E61 /* Colors.swift */,
+				41453EAE2C4D5906004D2CB7 /* Animations */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -143,6 +144,7 @@
 				41ACAF5A2C467AF70002E119 /* WeatherCollection */,
 				41ACAF712C467AF80002E119 /* WeatherCollectionTests */,
 				41ACAF7B2C467AF80002E119 /* WeatherCollectionUITests */,
+				41453EC72C4E851C004D2CB7 /* README.md */,
 				41ACAF592C467AF70002E119 /* Products */,
 			);
 			sourceTree = "<group>";
