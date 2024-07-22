@@ -103,6 +103,7 @@ final class WeatherCollectionViewController: UIViewController, WeatherCollection
         weatherCollectionView.translatesAutoresizingMaskIntoConstraints = false
         weatherCollectionView.register(WeatherViewCell.self, forCellWithReuseIdentifier: WeatherViewCell.reuseIdent)
         weatherCollectionView.backgroundColor = .clear
+        weatherCollectionView.isScrollEnabled = false
         weatherCollectionView.delegate = self
         
         view.addSubview(weatherCollectionView)
