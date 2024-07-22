@@ -20,10 +20,10 @@ _**Примеры реализации нативных анимаций для 
 ## 🧑‍💻 Authors
 >  Пока только я :(
 
-| ![](https://tenor.com/ru/view/sad-pablo-lonely-alone-gif-12928789.gif)
-|:--------------------------------------------------------------------------|
-| [Все проекты](https://github.com/wonsarc?tab=projects)                    |
-| iOS - Developer                                                           |
+|![](https://media1.tenor.com/m/-P-xeHYEY9QAAAAd/sad-pablo-lonely.gif)
+|:------------------------------------------------------------------------------------------------|
+| [Все проекты](https://github.com/wonsarc?tab=repositories)                                      |
+| iOS - Developer                                                                                 |
 <br>
 
 ## ⚖️ Technology Stack
